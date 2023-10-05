@@ -1,6 +1,6 @@
 # Burmese Number
 
-BurmeseNumHelper is a Dart utility for converting numbers to Burmese text representations.
+Burmese Number is a Dart utility for converting numbers to Burmese text representations.
 
 
 ## Usage
