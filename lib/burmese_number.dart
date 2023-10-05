@@ -146,7 +146,7 @@ extension ExtendedString on String {
   String get getMMDescription {
     switch (this) {
       case ".":
-        return "ဒသမ";
+        return "ဒဿမ";
       case "0":
         return "သုည";
       case "1":

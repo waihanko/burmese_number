@@ -1,5 +1,5 @@
 name: example
-description: A new Flutter project.
+description: Burmese Number
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -30,8 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  burmese_number:
-    path: ../
+  burmese_number: ^0.0.1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
