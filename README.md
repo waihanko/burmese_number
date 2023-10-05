@@ -1,39 +1,34 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# BurmeseNumHelper
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+BurmeseNumHelper is a Dart utility for converting numbers to Burmese text representations.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+### Static Function Call
 
 ```dart
-const like = 'sample';
+const result = BurmeseNumHelper.convertToLongNumber(number: "5980000.55", numberFormat: NumberFormat.plainText);
+//ငါးဆယ့်ကိုးသိန်းရှစ်သောင်းဒသမငါးငါး
+
+const result = BurmeseNumHelper.convertToLongNumber(number: "5980000.55", numberFormat: NumberFormat.numberInText);
+//၅ဆယ့်၉သိန်း၈သောင်းဒသမ၅၅
+
+const result =  BurmeseNumHelper.convertToSimpleNumber(number:  numberController.text);
+//၅၉၈၀၀၀၀.၅၅
 ```
 
-## Additional information
+### Extension Function Call
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```dart
+const result = "5980000.55".convertToLongNumber(numberFormat: NumberFormat.plainText);
+//ငါးဆယ့်ကိုးသိန်းရှစ်သောင်းဒသမငါးငါး
+
+const result = "5980000.55".convertToLongNumber(numberFormat: NumberFormat.numberInText);
+//၅ဆယ့်၉သိန်း၈သောင်းဒသမ၅၅
+
+const result = "5980000.55".convertToSimpleNumber();
+//၅၉၈၀၀၀၀.၅၅
+```
+
+
