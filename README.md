@@ -14,7 +14,7 @@ const result = BurmeseNumHelper.convertToLongNumber(number: "5980000.55", number
 const result = BurmeseNumHelper.convertToLongNumber(number: "5980000.55", numberFormat: NumberFormat.numberInText);
 //၅ဆယ့်၉သိန်း၈သောင်းဒဿမ၅၅
 
-const result =  BurmeseNumHelper.convertToSimpleNumber(number:  numberController.text);
+const result =  BurmeseNumHelper.convertToSimpleNumber(number:  "5980000.55");
 //၅၉၈၀၀၀၀.၅၅
 ```
 
