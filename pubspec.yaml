@@ -1,6 +1,6 @@
 name: burmese_number
 description: Burmese Number is a Dart utility for converting numbers to Burmese text representations.
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/waihanko/burmese_number
 
 environment:
