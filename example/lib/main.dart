@@ -48,26 +48,35 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            TextFormField(controller: numberController, decoration: const InputDecoration(
-              hintText: "Enter a number"
-            ),),
-            const SizedBox(height: 28,),
+            TextFormField(
+              controller: numberController,
+              decoration: const InputDecoration(hintText: "Enter a number"),
+            ),
+            const SizedBox(
+              height: 28,
+            ),
             Text(simpleNumber),
-            const SizedBox(height: 28,),
+            const SizedBox(
+              height: 28,
+            ),
             Text(longBurmeseWithNumber),
-            const SizedBox(height: 26,),
+            const SizedBox(
+              height: 26,
+            ),
             Text(longBurmesePlainText),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-         longBurmesePlainText = BurmeseNumHelper.convertToLongNumber(number: numberController.text);
-         longBurmeseWithNumber = BurmeseNumHelper.convertToLongNumber(number:  numberController.text, numberFormat: NumberFormat.numberInText);
-         simpleNumber = BurmeseNumHelper.convertToSimpleNumber(number:  numberController.text);
-         setState(() {
-
-         });
+          longBurmesePlainText = BurmeseNumHelper.convertToLongNumber(
+              number: numberController.text);
+          longBurmeseWithNumber = BurmeseNumHelper.convertToLongNumber(
+              number: numberController.text,
+              numberFormat: NumberFormat.numberInText);
+          simpleNumber = BurmeseNumHelper.convertToSimpleNumber(
+              number: numberController.text);
+          setState(() {});
         },
         child: const Icon(Icons.play_arrow),
       ), // This trailing comma makes auto-formatting nicer for build methods.

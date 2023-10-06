@@ -1,8 +1,6 @@
 library burmese_number;
 
 class BurmeseNumHelper {
-
-
   static final List<String> _burmeseNumberInText = [
     "",
     "ဆယ်",
@@ -13,7 +11,6 @@ class BurmeseNumHelper {
     "သန်း",
     "ကုဋေ",
   ];
-
 
   static final Map<String, String> _numberToBurmeseNumberMapper = {
     "0": "၀",
@@ -28,7 +25,7 @@ class BurmeseNumHelper {
     "9": "၉"
   };
 
-   static String convertToSimpleNumber({
+  static String convertToSimpleNumber({
     required String number,
     bool isCommaSeparated = false,
   }) {
@@ -42,7 +39,6 @@ class BurmeseNumHelper {
         .fold(number, (prev, e) => prev.toString().replaceAll(e.key, e.value));
   }
 
-
   //Over 8 && NORMAL => Change To THEIN
   //Over 10 && THEIN => Change To THAN
   //Over 12 && THAN => Change To GADAY
@@ -53,13 +49,14 @@ class BurmeseNumHelper {
     NumberFormat numberFormat = NumberFormat.plainText,
   }) {
     String result = "";
-    if(!RegExp(r'^(?![^0-9.]+$)(\d+(\.\d+)?|\.\d+)$').hasMatch(number)) return "INVALID";
-    DisplayFormat displayFormat  = DisplayFormat.defaultType;
+    if (!RegExp(r'^(?![^0-9.]+$)(\d+(\.\d+)?|\.\d+)$').hasMatch(number))
+      return "INVALID";
+    DisplayFormat displayFormat = DisplayFormat.defaultType;
 
     List<String> originalNumber = number.split(".");
     if (originalNumber[0].length > 14) {
       return "INVALID";
-    } else if (originalNumber[0].length > 12 ) {
+    } else if (originalNumber[0].length > 12) {
       displayFormat = DisplayFormat.d8;
     } else if (originalNumber[0].length > 10) {
       displayFormat = DisplayFormat.d7;
@@ -74,7 +71,8 @@ class BurmeseNumHelper {
         originalNumber[0].length);
 
     if (originalNumber[0]
-        .substring(0, originalNumber[0].length - displayFormat.getPartition.index)
+        .substring(
+            0, originalNumber[0].length - displayFormat.getPartition.index)
         .endsWith("0")) {
       result = displayFormat.getPartition.name + result;
     } else {
@@ -102,10 +100,10 @@ class BurmeseNumHelper {
   }
 
   static String _getFullNumber(
-      String wholeNumber,
-      NumberFormat mmNumberType,
-      int digitCount,
-      ) {
+    String wholeNumber,
+    NumberFormat mmNumberType,
+    int digitCount,
+  ) {
     String result = "";
     List<String> numType2 = List.of(_burmeseNumberInText);
 
@@ -133,13 +131,16 @@ class BurmeseNumHelper {
 
 extension ConvertToSimpleNumberExtension on String {
   String convertToSimpleNumber({bool isCommaSeparated = false}) {
-    return BurmeseNumHelper.convertToSimpleNumber(number: this, isCommaSeparated: isCommaSeparated);
+    return BurmeseNumHelper.convertToSimpleNumber(
+        number: this, isCommaSeparated: isCommaSeparated);
   }
 
-  String convertToLongNumber({NumberFormat numberType = NumberFormat.plainText,}) {
-    return BurmeseNumHelper.convertToLongNumber(number: this, numberFormat: numberType);
+  String convertToLongNumber({
+    NumberFormat numberType = NumberFormat.plainText,
+  }) {
+    return BurmeseNumHelper.convertToLongNumber(
+        number: this, numberFormat: numberType);
   }
-
 }
 
 extension ExtendedString on String {
